@@ -1,5 +1,6 @@
 const { Given, When, Then } = require("@cucumber/cucumber");
 const assert = require("assert");
+const Traveler = require("../../models/Traveler");
 
 const { viajante } = require("./../../app");
 
@@ -20,13 +21,15 @@ Given('ele sempre começa a viagem saudável.', function () {
 /** WHEN */
 
 When('o Traveler sair para caçar {int} vezes', function (int) {
-    for (let contador = 0; contador < int; contador++) {
+    for(let contador = 0; contador < int; contador++){
+        
         viajante.hunt();
     }
 });
 
 When('o Traveler parar para comer {int} vezes', function (int) {
-    for (let contador=0; contador < int; contador++) {
+    for (let contador = 0; contador < int; contador++){
+
         viajante.eat();
     }
 });
